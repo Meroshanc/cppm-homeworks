@@ -9,7 +9,7 @@ void execute()
 {
     int tempNum;
     string tempStr;
-    Counter countNum;
+    Counter countNum(1);
     cout << "Вы хотите указать начальное значение счётчика? Введите да или нет: ";
     cin >> tempStr;
     cout << endl;
@@ -19,14 +19,12 @@ void execute()
         {
             cout << "Введите начальное значение счётчика: ";
             cin >> tempNum;
-            countNum.set(tempNum);
+            countNum.changeValue(tempNum);
             cout << endl;
             break;
         }
         else if (tempStr == "нет")
         {
-            tempNum = rand() % 101;
-            countNum.set(tempNum);
             cout << endl;
             break;
         }

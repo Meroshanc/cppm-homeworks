@@ -6,20 +6,9 @@ class Counter
         int count;
 
     public:
-        void set(int num)
-        {
-            this->count = num;
-        }
-        void add()
-        {
-            this->count +=1;
-        }
-        void subtract()
-        {
-            this->count -=1;
-        }
-        int returnValue()
-        {
-            return this->count;
-        }
+        Counter (int num)           { count = num; }
+        void changeValue (int num)  { count = num; }
+        void add()                  { count++; }
+        void subtract()             { count--; }
+        int returnValue()           { return count; }
 };
