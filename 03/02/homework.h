@@ -7,7 +7,6 @@ class Counter
 
     public:
         Counter (int num)           { count = num; }
-        void changeValue (int num)  { count = num; }
         void add()                  { count++; }
         void subtract()             { count--; }
         int returnValue()           { return count; }

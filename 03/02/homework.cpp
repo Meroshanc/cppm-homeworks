@@ -5,32 +5,37 @@
 
 using namespace std;
 
-void execute()
+int setNum(string answer)
 {
     int tempNum;
-    string tempStr;
-    Counter countNum(1);
-    cout << "Вы хотите указать начальное значение счётчика? Введите да или нет: ";
-    cin >> tempStr;
-    cout << endl;
     do
     {
-        if(tempStr == "да")
+        if (answer == "да")
         {
             cout << "Введите начальное значение счётчика: ";
             cin >> tempNum;
-            countNum.changeValue(tempNum);
             cout << endl;
             break;
         }
-        else if (tempStr == "нет")
+        else if (answer == "нет")
         {
             cout << endl;
+            tempNum = 1;
             break;
         }
-        else 
+        else
             cout << "Неверная команда, повторите ввод!" << endl;
-    }while(1);
+    } while (1);
+    return tempNum;
+}
+
+void execute()
+{
+    string tempStr;
+    cout << "Вы хотите указать начальное значение счётчика? Введите да или нет: ";
+    cin >> tempStr;
+    cout << endl;
+    Counter countNum(setNum(tempStr));
     do
     {
         cout << "Введите команду ('+', '-', '=' или 'x'): ";
